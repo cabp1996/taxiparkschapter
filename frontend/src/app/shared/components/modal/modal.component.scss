@@ -1,0 +1,255 @@
+$xs: 320px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+.none {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(74, 74, 80, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--fullscreen {
+    position: inherit;
+    display: block;
+    background: white;
+  }
+
+  &__navigator-container {
+    margin-top: 64px;
+    min-height: 64px;
+    padding: 24px 0;
+    box-sizing: border-box;
+    background: var(--white);
+    box-shadow: 0 8px 8px -8px rgba(7, 7, 7, 0.16);
+
+    display: none;
+
+    &--fullscreen {
+      display: flex;
+      align-items: center;
+      padding-bottom: 0;
+      padding-top: 24px;
+      margin-top: 0;
+    }
+  }
+
+  &__box {
+    min-height: 144px;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    max-height: 100%;
+
+    &--sm {
+      min-height: 144px;
+      width: 472px;
+    }
+
+    &--md {
+      width: 688px;
+    }
+
+    &--lg {
+      width: 904px;
+    }
+
+    &--fullscreen {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      max-height: unset;
+      border-radius: 0;
+      justify-content: center;
+    }
+  }
+
+  &__content {
+    &--fullscreen {
+      width: 688px;
+    }
+  }
+
+  &__header {
+    border-radius: 8px 8px 0 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 16px 32px;
+
+    &__title {
+      padding: 0;
+      margin: 0;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #5b5f7b;
+    }
+
+    &__close {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+    &--close {
+      cursor: pointer;
+    }
+
+    &--fullscreen {
+      display: none;
+    }
+  }
+
+  &__body {
+    min-height: 70px;
+    max-height: calc(100vh - 380px);
+    margin: 40px 8px 40px 32px;
+    padding: 0 24px 0 0;
+    overflow-y: overlay;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 100%;
+      border-radius: 4px;
+      background: #e9ecf3;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 44px;
+      border-radius: 5px;
+      background: #b7b7b9;
+    }
+
+    &--fullscreen {
+      max-height: unset;
+      position: relative;
+      margin: 0 0 30px 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  &__button {
+    &--sm,
+    &--md,
+    &--lg {
+      min-width: 196px;
+
+      &:nth-child(2) {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    &__box {
+      &--sm {
+        width: 472px;
+      }
+
+      &--md {
+        min-height: 373px;
+        width: 580px;
+      }
+
+      &--lg {
+        width: 580px;
+      }
+    }
+
+    &__body {
+      margin: 30px 16px 30px 32px;
+      padding: 0 16px 0 0;
+
+      &--md,
+      &--lg {
+        margin: 40px 8px 40px 24px;
+        padding: 0 16px 0 0;
+      }
+    }
+
+    &__button {
+      &--sm,
+      &--md,
+      &--lg {
+        min-width: 196px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .modal {
+    &__box {
+      max-height: 100%;
+      width: 100% !important;
+      border-radius: 16px 16px 0 0;
+    }
+
+    &__body {
+      max-height: calc(100vh - 286px);
+      margin: 24px 2px 24px 16px;
+      padding: 0 14px 0 0;
+
+      &--hb {
+        max-height: calc(100vh - 100px);
+      }
+      &--fullscreen {
+        max-height: unset;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &__button {
+      &--sm,
+      &--md,
+      &--lg {
+        width: 100% !important;
+        margin-left: 0 !important;
+
+        &:nth-child(1) {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .modal {
+    &--fullscreen {
+      left: 0;
+    }
+    &__box {
+      &--fullscreen {
+        border-radius: unset;
+      }
+    }
+    &__body {
+      &--fullscreen {
+        padding: 0;
+        margin: 0 0 16px 0;
+      }
+    }
+    &__navigator-container {
+      &--fullscreen {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<app-filter
+  (onSelectFilter)="filterTable($event)"
+  [statusFilters]="ridesFilters"
+></app-filter>
+<div class="table-container">
+  <app-table [tableConfig]="ridesTableConfig" (onClickRow)="onClickRow($event)"></app-table>
+</div>

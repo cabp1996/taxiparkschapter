@@ -1,0 +1,17 @@
+<article class="card">
+  <div class="card__header">
+    <div class="icon icon--{{ skill.name }}">
+      <img
+        src="assets/svgs/{{ skill.name }}_icon.svg"
+        alt="{{ skill.name }}_icon"
+      />
+    </div>
+    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+  </div>
+
+  <div class="card__body">
+    <h4>{{ skill.percentage }}%</h4>
+    <h5>{{ skill.name | titlecase }}</h5>
+    <p>{{ skill.description }}</p>
+  </div>
+</article>

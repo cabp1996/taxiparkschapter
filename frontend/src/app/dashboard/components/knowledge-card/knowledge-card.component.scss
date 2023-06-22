@@ -1,0 +1,75 @@
+.card {
+  width: 185px;
+  height: 188px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 1.5rem;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    i {
+      color: #231f20;
+      font-size: 20px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 8px;
+
+      &--grammar {
+        background-color: #f86060;
+      }
+
+      &--listening {
+        background-color: #ffb978;
+      }
+
+      &--prounancation {
+        background-color: #778dff;
+      }
+
+      &--dictionary {
+        background-color: #64e562;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    h4 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #2e3a59;
+    }
+
+    h5 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #2e3a59;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #2e3a59;
+    }
+  }
+}

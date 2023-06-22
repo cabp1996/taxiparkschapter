@@ -1,0 +1,60 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__label {
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    &--primary {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      color: #101010;
+    }
+
+    &--secondary {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 16px;
+      color: #5b5f7b;
+    }
+  }
+
+  &__input {
+    background: #fcfdfe;
+
+    box-sizing: border-box;
+    padding: 11px 16px;
+
+    &--primary {
+      border: 1px solid #101010;
+      border-radius: 8px;
+    }
+
+    &--secondary {
+      border: 1px solid #e4e6ee;
+      border-radius: 4px;
+
+      &:focus {
+        outline: 2px solid #e4e6ee;
+      }
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #9fa2b4;
+    }
+  }
+
+  &__error-message {
+    color: #f32013;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 0.5rem;
+  }
+}

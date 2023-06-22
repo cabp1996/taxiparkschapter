@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Montserrat";
+  src: url(./assets/fonts/MontserratAlternates-Regular.otf) format("opentype");
+}
+
+:root {
+  --white: #ffffff;
+  --lightBlackUiDs: #2c2c30;
+  --darkGreyUiDs: #4a4a4a;
+  --lightGreyUiDs: #6e6e73;
+}
+
+*{
+    font-family: 'Montserrat';
+}

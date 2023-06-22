@@ -1,0 +1,13 @@
+<div id="{{ id }}-container" class="checkbox-container">
+  <input
+    #checkbox
+    type="checkbox"
+    [id]="id"
+    [attr.disabled]="disabled ? true : null"
+    [formControl]="formControl"
+  />
+
+  <label class="checkbox-container--slot" [for]="id">
+    {{ label }}
+  </label>
+</div>

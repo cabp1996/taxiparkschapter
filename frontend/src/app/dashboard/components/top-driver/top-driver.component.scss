@@ -1,0 +1,83 @@
+.driver-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f9fc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 1rem 1.5rem;
+
+  &__person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__personal-info {
+      color: #2e3a59;
+
+      h2 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0;
+        padding: 0 !important;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+
+        color: #8f9bb3;
+      }
+    }
+
+    &__avatar {
+      width: 60px;
+      height: 60px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-right: 0.5rem;
+
+      img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__balances {
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #2e3a59;
+      margin: 0;
+      padding: 0;
+      text-align: right;
+
+      span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #2e3a59;
+      }
+    }
+
+    hr {
+      margin: 0.25rem 0;
+    }
+  }
+}

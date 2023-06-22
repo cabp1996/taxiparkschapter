@@ -1,0 +1,22 @@
+<article class="driver-card">
+  <div class="driver-card__person">
+    <div class="driver-card__person__avatar">
+      <img src="assets/svgs/avatar.svg" alt="Avatar" />
+    </div>
+
+    <div class="driver-card__person__personal-info">
+      <h2>{{ topDriver.name }}</h2>
+      <p>{{ topDriver.telephone }}</p>
+    </div>
+  </div>
+
+  <div class="driver-card__balances">
+    <p>
+      Orders: <span> {{ topDriver.orders }}</span>
+    </p>
+    <hr />
+    <p>
+      Income: <span> $ {{ topDriver.income }}</span>
+    </p>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+.filters-container {
+  border-bottom: 1.5px solid #101010;
+
+  &__tab {
+    background-color: transparent;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #101010;
+
+    &--selected {
+      color: #5459ea;
+    }
+  }
+}

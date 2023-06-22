@@ -1,0 +1,11 @@
+<button
+  class="button"
+  [ngClass]="{ 'button--outline': isOutline }"
+  (click)="clickButton()"
+  [type]="type"
+  [disabled]="isDisabled"
+  style="--bg:{{ backgroundColor }}; --fc:{{ fontColor }};"
+>
+  <div class="loader" *ngIf="isLoading"></div>
+  {{ text }}
+</button>

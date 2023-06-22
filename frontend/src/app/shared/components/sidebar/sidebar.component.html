@@ -1,0 +1,53 @@
+<div
+  class="info-container"
+  [ngClass]="{ 'info-container--collapsed': isCollapsed }"
+>
+  <div
+    class="info-container__avatar"
+    [ngClass]="{ 'info-container__avatar--collapsed': isCollapsed }"
+  >
+    <img src="assets/svgs/avatar.svg" alt="Avatar" />
+  </div>
+
+  <div
+    class="info-container__personal-info"
+    [ngClass]="{ 'info-container__personal-info--collapsed': isCollapsed }"
+  >
+    <h2>{{ currentUser.name }}</h2>
+    <p>{{ currentUser.phone }}</p>
+  </div>
+</div>
+
+<ul class="sidebar" [ngClass]="{ 'sidebar--collapsed': isCollapsed }">
+  <h2 class="sidebar__title" *ngIf="!isCollapsed">MAIN MENU</h2>
+  <h2
+    class="sidebar__title"
+    *ngIf="isCollapsed"
+    [ngClass]="{ 'sidebar__title--collapsed': isCollapsed }"
+  >
+    MENU
+  </h2>
+  <li
+    *ngFor="let item of sidebarItems; let i = index"
+    [routerLink]="item.path"
+    routerLinkActive="sidebar__item--active"
+    #rla="routerLinkActive"
+    class="sidebar__item"
+    (click)="updateSiblingsOfActiveLink(i)"
+  >
+    <div
+      class="sidebar__item__background"
+      [ngClass]="{
+        'sidebar__item__background--active': rla.isActive,
+        'sidebar__item__background--sibling-active-below':
+          item.hasSiblingActiveBelow,
+        'sidebar__item__background--sibling-active-above':
+          item.hasSiblingActiveAbove,
+        'sidebar__item__background--collapsed': isCollapsed
+      }"
+    >
+      <i class="fa {{ item.icon }}" aria-hidden="true"></i>
+      <span> {{ item.label }}</span>
+    </div>
+  </li>
+</ul>

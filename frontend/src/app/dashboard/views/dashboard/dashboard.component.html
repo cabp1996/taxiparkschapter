@@ -1,0 +1,38 @@
+<div class="main-container">
+  <div>
+    <app-section-title title="Knowledge base"></app-section-title>
+
+    <div class="cards-container">
+      <app-dashboard-card
+        type="primary"
+        text="Total Orders"
+      ></app-dashboard-card>
+      <app-dashboard-card
+        type="danger"
+        text="Total Earnings"
+      ></app-dashboard-card>
+      <app-dashboard-card type="secondary" text="Profitм"></app-dashboard-card>
+    </div>
+
+    <div class="knowledge-cards-container">
+      <app-knowledge-card
+        *ngFor="let skill of skills"
+        [skill]="skill"
+      ></app-knowledge-card>
+    </div>
+  </div>
+
+  <div>
+    <app-section-title title="Top Drivers"></app-section-title>
+
+    <ul class="drivers-list">
+      <li *ngFor="let driver of topDrivers" class="drivers-list__item">
+        <app-top-driver [topDriver]="driver"></app-top-driver>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="table-container">
+  <app-table [tableConfig]="driversTableConfig"></app-table>
+</div>

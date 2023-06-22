@@ -1,0 +1,12 @@
+<div class="filters-container">
+  <button
+    class="filters-container__tab"
+    [ngClass]="{
+      'filters-container__tab--selected': filter.key === selectedFilter
+    }"
+    *ngFor="let filter of statusFilters"
+    (click)="selectFilter(filter.key)"
+  >
+    {{ filter.key }} ({{ filter.total }}) <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </button>
+</div>

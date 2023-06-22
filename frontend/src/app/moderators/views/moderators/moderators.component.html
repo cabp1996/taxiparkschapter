@@ -1,0 +1,56 @@
+<div class="moderators-header">
+  <app-section-title title="Moderators list"></app-section-title>
+
+  <app-button
+    [text]="'Add New Moderator'"
+    backgroundColor="#5459EA"
+    [isOutline]="true"
+    (onClick)="openModeratorModal()"
+  ></app-button>
+</div>
+
+<div class="moderators-list">
+  <app-moderator-card
+    *ngFor="let moderator of moderators"
+    [moderator]="moderator"
+    [placeholder]="moderator.fileUrl || 'assets/svgs/user_placeholder.svg'"
+  ></app-moderator-card>
+</div>
+
+<app-modal
+  [isModalOpen]="isModalOpen"
+  title="Moderator information"
+  (onCancel)="closeModeratorModal()"
+>
+  <div class="modal-body">
+    <form class="form" [formGroup]="moderatorsForm">
+      <div class="form__header">
+        <app-file-input
+          idElement="moderatorAvatarInput"
+          (onUploadFile)="onUploadModeratorAvatar($event)"
+          [placeholder]="'assets/jpgs/avatar_placeholder.jpg'"
+          #fileInput
+        ></app-file-input>
+      </div>
+
+      <app-input
+        label="Name:"
+        [idElement]="'moderator_name'"
+        color="secondary"
+        placeholder="Name"
+        ngDefaultControl
+        formControlName="name"
+      ></app-input>
+
+      <div class="form__footer">
+        <app-button
+          class="form__footer__button"
+          [text]="'Add New Moderator'"
+          [isDisabled]="isSubmitButtonDisabled"
+          backgroundColor="#5459EA"
+          (onClick)="saveModerator()"
+        ></app-button>
+      </div>
+    </form>
+  </div>
+</app-modal>

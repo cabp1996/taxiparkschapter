@@ -1,0 +1,44 @@
+.water-drop {
+  background-color: white;
+  border-radius: 0px 30px 30px 30px;
+  box-sizing: border-box;
+  padding: 6px 11px;
+
+  h3,
+  p,
+  span {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #2e3a59;
+  }
+
+  p {
+    padding: 0 0.5rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #2e3a59;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
+  span {
+    padding: 0 24px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 28px;
+    color: #2e3a59;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+  }
+}

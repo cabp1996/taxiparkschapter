@@ -1,0 +1,93 @@
+<div class="search-bar-container">
+  <app-section-title title="Client list"></app-section-title>
+  <div class="search-bar-container__input">
+    <input
+      class="input"
+      type="text"
+      placeholder="Search by name..."
+      [formControl]="searchText"
+    />
+    <i class="fa fa-search icon" aria-hidden="true"></i>
+  </div>
+  <div class="spacer"></div>
+  <app-button
+    [text]="'Add New Clients'"
+    backgroundColor="#5459EA"
+    (onClick)="openClientModal(false)"
+  ></app-button>
+</div>
+<app-table [tableConfig]="clientsTableConfig" [showTotal]="true"></app-table>
+
+<app-modal
+  [isModalOpen]="isClientModalOpen"
+  title="Clients Information"
+  (onCancel)="closeClientModal()"
+>
+  <div class="modal-header">header</div>
+  <div class="modal-body">
+    <form [formGroup]="clientForm" class="form">
+      <div class="form__header">
+        <app-file-input
+          #fileInput
+          (onUploadFile)="onUploadClientAvatar($event)"
+          [placeholder]="
+            currentClient
+              ? currentClient.fileUrl
+              : 'assets/jpgs/avatar_placeholder.jpg'
+          "
+        ></app-file-input>
+      </div>
+
+      <div class="form__body">
+        <app-input
+          label="First Name:"
+          [idElement]="'client_first_name'"
+          color="secondary"
+          placeholder="Sierra"
+          ngDefaultControl
+          formControlName="name"
+        ></app-input>
+        <app-input
+          label="Last Name:"
+          [idElement]="'client_last_name'"
+          color="secondary"
+          placeholder="Ferguson"
+          ngDefaultControl
+          formControlName="lastName"
+        ></app-input>
+        <app-input
+          label="Home Location:"
+          [idElement]="'client_home_location'"
+          color="secondary"
+          placeholder="Quito, Ec"
+          ngDefaultControl
+          formControlName="homeLocation"
+        ></app-input>
+        <app-input
+          label="Work Location:"
+          [idElement]="'client_work_location'"
+          color="secondary"
+          placeholder="Quito, Ec"
+          ngDefaultControl
+          formControlName="workLocation"
+        ></app-input>
+      </div>
+
+      <div class="form__footer">
+        <app-button
+          [isLoading]="isLoading"
+          [isDisabled]="isFormSubmitDisabled"
+          class="form__footer__button"
+          [text]="currentClient ? 'Update client' : 'Add New Client'"
+          backgroundColor="#5459EA"
+          (onClick)="saveClient()"
+        ></app-button>
+      </div>
+    </form>
+  </div>
+</app-modal>
+
+<app-alert-confirmation
+  message="Are you sure to delete this client?"
+  #modalConfirmationAlert
+></app-alert-confirmation>

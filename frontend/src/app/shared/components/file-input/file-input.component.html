@@ -1,0 +1,13 @@
+<div class="avatar">
+  <label
+    class="avatar__file"
+    [ngClass]="{ 'file-over': false }"
+    [for]="idElement"
+  >
+    <button (click)="onClickFileUpload()">
+      <i class="fa fa-camera" aria-hidden="true"></i>
+    </button>
+    <input #fileInput [id]="idElement" type="file" accept=".png, .jpeg, .jpg" />
+    <img #imgPlaceholder class="avatar__img" [src]="placeholder" alt="Avatar" />
+  </label>
+</div>

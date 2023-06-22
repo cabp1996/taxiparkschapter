@@ -1,0 +1,51 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  main {
+    max-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    background-color: black;
+    padding: 20px;
+    padding-left: 0;
+    box-sizing: border-box;
+
+    .sub-container {
+      background-color: white;
+      height: 100%;
+      width: 100%;
+      border-radius: 30px;
+      padding: 1.25rem 0;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      &__header {
+        padding: 0 2.5rem;
+      }
+
+      &__body {
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 2.5rem 5rem 2.5rem;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+          height: 100%;
+          border-radius: 30px;
+          background: #e9ecf3;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          height: 44px;
+          border-radius: 30px;
+          background: #b7b7b9;
+        }
+      }
+    }
+  }
+}

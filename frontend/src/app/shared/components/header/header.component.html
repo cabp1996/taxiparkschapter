@@ -1,0 +1,17 @@
+<header>
+  <div>
+    <i class="fa fa-bars" aria-hidden="true" (click)="manageSidebar()"></i>
+    <span class="greeting"
+      >Good morning, {{ currentUser.name }}
+
+      <img src="assets/svgs/hand.svg" alt="hand" />
+    </span>
+
+    <span>you have </span>
+    <a> 1 new message</a>
+  </div>
+
+  <button class="logout-button" (click)="logout()">
+    <img src="assets/svgs/logout.svg" alt="logout" />
+  </button>
+</header>

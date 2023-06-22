@@ -1,0 +1,31 @@
+<section class="timeline-container" *ngIf="showTimeline">
+  <div class="info-container">
+    <div class="info-container__avatar">
+      <img src="assets/svgs/avatar.svg" alt="Avatar" />
+    </div>
+
+    <div class="info-container__personal-info">
+      <h2>{{ timelineRide.userName }}</h2>
+      <p>{{ timelineRide.userPhone }}</p>
+    </div>
+  </div>
+  <ul class="timeline-container__list">
+    <li class="timeline-container__list__item">
+      <app-water-drop
+        [title]="'Created'"
+        [footer]="
+          (timelineRide.orderedTime | date : 'MMM d, y, h:mm:ss a') || ''
+        "
+      ></app-water-drop>
+    </li>
+    <li class="timeline-container__list__item">
+      <app-water-drop
+        [title]="'Why do we use it ?'"
+        [description]="timelineRide.reason"
+        [footer]="
+          (timelineRide.orderedTime | date : 'MMM d, y, h:mm:ss a') || ''
+        "
+      ></app-water-drop>
+    </li>
+  </ul>
+</section>

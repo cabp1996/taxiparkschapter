@@ -1,0 +1,39 @@
+.avatar {
+  &__file {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 50%;
+    }
+
+    input[type="file"] {
+      display: none;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    button {
+      background-color: #5f66ea;
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+      border-radius: 50%;
+      outline: 3px solid white;
+      border: none;
+      width: 30px;
+      height: 30px;
+
+      i {
+        color: white;
+        font-size: 15px;
+      }
+    }
+  }
+}

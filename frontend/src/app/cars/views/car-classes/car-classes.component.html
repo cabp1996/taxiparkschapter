@@ -1,0 +1,127 @@
+<div class="car-classes-header">
+  <app-section-title title="Car classes list"></app-section-title>
+
+  <app-button
+    [text]="'Add Car classes'"
+    backgroundColor="#5459EA"
+    [isOutline]="true"
+    (onClick)="openCarModal(false)"
+  ></app-button>
+</div>
+
+<app-table
+  [tableConfig]="carsTableConfig"
+  totalRowsText="Total car classes:"
+  [showTotal]="true"
+></app-table>
+
+<app-modal
+  [isModalOpen]="isModalOpen"
+  title="Car classes information"
+  (onCancel)="closeCarModal()"
+>
+  <div class="modal-header">header</div>
+  <div class="modal-body">
+    <form [formGroup]="carClassForm" class="form">
+      <div class="form__body">
+        <app-input
+          class="form__body--full-width"
+          label="Name:"
+          [idElement]="'car_class_name'"
+          color="secondary"
+          placeholder="Name"
+          ngDefaultControl
+          formControlName="name"
+        ></app-input>
+
+        <app-checkbox
+          ngDefaultControl
+          label="Lightning ⚡️"
+          formControlName="lightning"
+        ></app-checkbox>
+
+        <app-checkbox
+          ngDefaultControl
+          label="Delivery"
+          formControlName="delivery"
+        ></app-checkbox>
+
+        <app-input
+          label="Starting Value:"
+          [idElement]="'car_class_starting_value'"
+          color="secondary"
+          placeholder="Starting Value"
+          type="number"
+          ngDefaultControl
+          formControlName="startingValue"
+        ></app-input>
+
+        <app-input
+          label="Free km:"
+          [idElement]="'car_class_free_km'"
+          color="secondary"
+          placeholder="Free km"
+          type="number"
+          ngDefaultControl
+          formControlName="freeKm"
+        ></app-input>
+
+        <app-input
+          label="Per km value:"
+          [idElement]="'car_class_per_km_value'"
+          color="secondary"
+          placeholder="Per km value"
+          type="number"
+          ngDefaultControl
+          formControlName="perKmValue"
+        ></app-input>
+
+        <app-input
+          label="Per minute value:"
+          [idElement]="'car_class_per_minute_value'"
+          color="secondary"
+          placeholder="Per minute value"
+          type="number"
+          ngDefaultControl
+          formControlName="perMinuteValue"
+        ></app-input>
+
+        <app-input
+          label="Waiting time:"
+          [idElement]="'car_class_waiting_time'"
+          color="secondary"
+          placeholder="Waiting time"
+          type="number"
+          ngDefaultControl
+          formControlName="waitingTime"
+        ></app-input>
+
+        <app-input
+          label="Out of branch:"
+          [idElement]="'car_class_out_of_branch'"
+          color="secondary"
+          placeholder="Out of branch"
+          type="number"
+          ngDefaultControl
+          formControlName="outOfBranch"
+        ></app-input>
+      </div>
+
+      <div class="form__footer">
+        <app-button
+          class="form__footer__button"
+          [text]="'Add New Car Class'"
+          [text]="currentCarClass ? 'Update Car Class' : 'Add New Car Class'"
+          [isDisabled]="isSubmitButtonDisabled"
+          backgroundColor="#5459EA"
+          (onClick)="saveCarClass()"
+        ></app-button>
+      </div>
+    </form>
+  </div>
+</app-modal>
+
+<app-alert-confirmation
+  message="Are you sure to delete this car class?"
+  #modalConfirmationAlert
+></app-alert-confirmation>

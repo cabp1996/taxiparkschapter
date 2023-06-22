@@ -1,0 +1,41 @@
+<main>
+  <div class="login-container">
+    <img src="assets/svgs/login_bg_img.svg" alt="login_bg" />
+    <div class="login-container__form">
+      <img src="assets/svgs/login_icon.svg" alt="login_icon" />
+      <h2>Log In to Admin Panel</h2>
+      <p>Enter your phone number and password below</p>
+
+      <form [formGroup]="loginForm">
+        <app-input
+          label="PHONE NUMBER"
+          [idElement]="'login_phone_number'"
+          placeholder="Enter your phone number"
+          ngDefaultControl
+          formControlName="phone"
+        ></app-input>
+
+        <app-input
+          label="PASSWORD"
+          [idElement]="'login_password'"
+          type="password"
+          placeholder="Enter your password"
+          ngDefaultControl
+          formControlName="password"
+        ></app-input>
+
+        <app-button
+          [text]="'Log In'"
+          (onClick)="login()"
+          [isDisabled]="isSubmitButtonDisabled"
+          [isLoading]="isLoading"
+        ></app-button>
+
+        <div class="anchor">
+          <span>Don’t have an account?</span>
+          <a href="">Sign up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

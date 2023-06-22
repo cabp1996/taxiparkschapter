@@ -1,0 +1,36 @@
+.car-classes-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.form {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    &--full-width {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__footer {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    &__button {
+      width: 160px;
+    }
+  }
+}

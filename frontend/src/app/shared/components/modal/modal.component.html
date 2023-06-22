@@ -1,0 +1,46 @@
+<div
+  [id]="idElement"
+  [class]="isModalOpen ? 'modal modal--' + size : 'none'"
+  tabindex="0"
+  (click)="close()"
+>
+  <div
+    class="modal__navigator-container modal__navigator-container--{{ size }}"
+  >
+    <ng-content select=".modal-navigator"></ng-content>
+  </div>
+
+  <div
+    class="modal__box modal__box--{{ size }}"
+    (click)="stopPropagation($event)"
+  >
+    <div class="modal__content--{{ size }}">
+      <div></div>
+      <div
+        *ngIf="!hideHeader"
+        class="modal__header modal__header--border modal__header--{{ size }}"
+      >
+        <h2 class="modal__header__title">
+          {{ title }}
+        </h2>
+        <button class="modal__header__close" (click)="close()">
+          <svg
+            width="11"
+            height="11"
+            viewBox="0 0 11 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 1.29622L9.70378 0L5.49999 4.20377L1.29622 0L0 1.29622L4.20377 5.49999L0 9.70378L1.29622 11L5.49999 6.79623L9.70376 11L11 9.70378L6.79623 5.49999L11 1.29622Z"
+              fill="#5B5F7B"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="modal__body modal__body--{{ size }}">
+        <ng-content select=".modal-body"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

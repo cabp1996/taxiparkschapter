@@ -1,0 +1,8 @@
+<div class="snackbar snackbar--{{ type }}" #snackbar>
+  <div class="snackbar__text">
+    {{ message }}
+  </div>
+  <button *ngIf="actionText" class="snackbar__action" (click)="onActionClick()">
+    {{ actionText }}
+  </button>
+</div>

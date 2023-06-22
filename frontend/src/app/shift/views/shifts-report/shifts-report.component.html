@@ -1,0 +1,62 @@
+<div class="shift-header">
+  <app-section-title title="Shift report"></app-section-title>
+
+  <div class="shift-header__arrows-container">
+    <span class="shift-header__arrows-container__number">{{ totalPayIn }}</span>
+    <img src="assets/svgs/blue_arrow_icon.svg" alt="blue_Arrow_icon" />
+    <span class="shift-header__arrows-container__number">{{
+      totalPayOut
+    }}</span>
+    <img src="assets/svgs/red_arrow_icon.svg" alt="red_Arrow_icon" />
+  </div>
+</div>
+
+<form class="shift-form" [formGroup]="shiftForm">
+  <app-input
+    label="Name"
+    [idElement]="'shift_name'"
+    color="secondary"
+    placeholder="Input name"
+    ngDefaultControl
+    formControlName="name"
+  ></app-input>
+  <app-input
+    label="Per KM"
+    [idElement]="'shift_perkm'"
+    color="secondary"
+    placeholder="Input per km"
+    ngDefaultControl
+    formControlName="perKm"
+  ></app-input>
+
+  <app-input
+    class="shift-form__full-width"
+    label="Value"
+    [idElement]="'shift_value'"
+    color="secondary"
+    placeholder="Input value"
+    ngDefaultControl
+    formControlName="value"
+  ></app-input>
+
+  <app-button
+    [text]="'Pay in'"
+    backgroundColor="#5459EA"
+    [isOutline]="true"
+    [isDisabled]="areButtonsDisabled"
+    (onClick)="pay(false)"
+  ></app-button>
+  <app-button
+    [text]="'Pay out'"
+    backgroundColor="#FF333F"
+    [isOutline]="true"
+    [isDisabled]="areButtonsDisabled"
+    (onClick)="pay(true)"
+  ></app-button>
+</form>
+
+<app-table
+  [tableConfig]="shiftsTableConfig"
+  [showTotal]="true"
+  totalRowsText="Total shifts:"
+></app-table>

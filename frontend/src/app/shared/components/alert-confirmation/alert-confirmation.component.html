@@ -1,0 +1,19 @@
+<app-modal
+  [isModalOpen]="isOpen"
+  [hideHeader]="true"
+  size="sm"
+  (onCancel)="closeAlertModal()"
+>
+  <div class="modal-body">
+    <p class="modal-body__message">{{ message }}</p>
+
+    <div class="modal-body__buttons">
+      <button class="button button--cancel">
+        <i class="fa fa-times-circle" aria-hidden="true"></i> Cancel
+      </button>
+      <button class="button button--accept">
+        <i class="fa fa-check-circle" aria-hidden="true"></i> Accept
+      </button>
+    </div>
+  </div>
+</app-modal>
